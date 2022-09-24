@@ -12,7 +12,7 @@ class Uni {
 
 
 public:
-    Uni();
+    Uni(std::string Name);
 
 private:
 

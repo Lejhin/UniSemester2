@@ -5,6 +5,7 @@
 #include "Uni.h"
 
 
-Uni::Uni() {
-    std::cout <<"Hello University" << std::endl;
+Uni::Uni(std::string Name) {
+
+    std::cout << Name << std::endl;
 }

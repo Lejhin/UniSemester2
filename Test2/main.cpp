@@ -6,6 +6,6 @@
 
 int main(){
 
-    Uni MyUni();
+    Uni MyUni("Hi Uni");
     
 }
