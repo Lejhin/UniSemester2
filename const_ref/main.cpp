@@ -21,15 +21,9 @@ int main(){
    // int*p = &val;
    // int& ref = val;
    //& kann als referenz benutzt werden;
-    tausche(val,b)
-;    
-
+    tausche(val,b);
     std::cout << val << b << std::endl;
-
-
-
-
-
+    
 
 
 }
