@@ -26,12 +26,24 @@ void crash(){
     test2.at(42) = 0;
 }
 
-int main(int argc, char** argv){
+void copyassign(){
+    IntVector v1(17);
+    IntVector v2(v1);
+    IntVector v3(10);
+    v3 = v1;
+
+    v3.out();
+    v1.out();
+}
+
+/*int main(int argc, char** argv){
 
    // if(argv[1] == "c"){
-        crash();
+        //crash();
    // }else{
        // std::cout<< argv[1] << std::endl;
        // klappt();
     //}
+    copyassign();
 }
+*/

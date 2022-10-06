@@ -4,4 +4,5 @@ project(Semester_2)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Semester_2
-        Test2/main.cpp Test2/src/Uni.cpp Test2/src/Uni.h)
+        Aufgabe2_3/alltest.h Aufgabe2_3/gtest_main.cpp Aufgabe2_3/IntVector.cpp Aufgabe2_3/IntVector.h Aufgabe2_3/test_intvector1.cpp)
+

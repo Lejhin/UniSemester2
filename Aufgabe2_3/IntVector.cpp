@@ -34,6 +34,27 @@ void IntVector::out() {
     for(size_t i = 0; i < len; i++){
         std::cout << array[i] <<  " ";
     }
+    std::cout << std::endl;
 }
+
+IntVector& IntVector::operator=( const IntVector& newVector) {
+    if(this->array != newVector.array){
+        delete this->array;
+        len = newVector.len;
+        array = new int[newVector.len];
+        array = newVector.array;
+        return *this;
+    }else{
+        throw NULL;
+    }
+}
+
+IntVector::IntVector(const IntVector &newVector) {
+    this->array = new int[newVector.len];
+    len = newVector.len;
+    array = newVector.array;
+}
+
+
 
 

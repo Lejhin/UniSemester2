@@ -13,6 +13,8 @@ private:
 
 public:
     IntVector(size_t len);
+    IntVector& operator= (const IntVector& newVector); //Zuweisungsoperator
+    IntVector(const IntVector& newVector); //Kopierkonstruktor
     ~IntVector();
     size_t size();
     int& at(size_t idx);
