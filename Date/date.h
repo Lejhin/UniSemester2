@@ -5,13 +5,13 @@
 
 class date{
     private:
-    
-    int day;
-    int month;
-    int year;
+        int day;
+        int month;
+        int year;
     public:
-
-    date(int day, int month, int year);
+        date(int day, int month, int year);
+        void add_day(int day);
+        void print();
 
 };
 
