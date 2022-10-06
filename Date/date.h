@@ -11,7 +11,7 @@ class date{
     public:
         date(int day, int month, int year);
         void add_day(int day);
-        void print();
+        void print() const;
 
 };
 
