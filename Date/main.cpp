@@ -15,6 +15,8 @@ int main(){
 
     feiertag.print();
 
+    Noisy* dyn = new Noisy("dyn");
+
     event_date.add_day(4);
 
     event_date.print();

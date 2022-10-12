@@ -10,6 +10,7 @@ Noisy::Noisy(std::string name){
 }
 Noisy::~Noisy(){
     counter--;
+    std::cout << counter << std::endl;
 }
 
 int Noisy::get_counter(){
