@@ -8,6 +8,7 @@ class date{
         int day;
         int month;
         int year;
+        void normalisieren();
     public:
         date(int day, int month, int year);
         void add_day(int day);
