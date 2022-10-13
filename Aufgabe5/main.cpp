@@ -14,17 +14,17 @@ int main(){
 
 
 	fstream file;
-	file.open("zahlen.txt", ios::in);
-
+	file.open("Aufgabe5/zahlen.txt", ios::in);
 	int zahl;
 	while(file >> zahl){
-
 
 		cout << zahl << endl;
 	};
 
 
 
+	
+	
 
 
 }

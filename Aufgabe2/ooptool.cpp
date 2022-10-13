@@ -1136,10 +1136,10 @@ string Timer::human_format(double secs) {
                          static_cast<long>(ms));
 }
 
-void schlafe_ms(int ms) {
+/*void schlafe_ms(int ms) {
     std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }
 
 void schlafe_us(int us) {
     std::this_thread::sleep_for(std::chrono::microseconds(us));
-}
+}*/
