@@ -1,4 +1,4 @@
-SRC_DIR = Aufgabe2_3
+SRC_DIR = Aufgabe5
 BUILD_DIR = $(SRC_DIR)
 CC = g++
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)

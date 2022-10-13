@@ -12,12 +12,12 @@ using namespace std;
 
 int main(){
 
-
-	fstream file;
-	file.open("Aufgabe5/zahlen.txt", ios::in);
+	//ifstream für input
+	//ofstream für output
+	ifstream file;
+	file.open("Aufgabe5/zahlen.txt");
 	int zahl;
 	while(file >> zahl){
-
 		cout << zahl << endl;
 	};
 
