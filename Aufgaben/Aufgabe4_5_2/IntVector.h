@@ -7,6 +7,7 @@
 
 #ifndef INTVECTOR_H_
 #define INTVECTOR_H_
+
 #include <vector>
 #include <iostream>
 

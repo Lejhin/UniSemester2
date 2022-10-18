@@ -45,7 +45,7 @@ IntVector& IntVector::operator=( const IntVector& newVector) {
         array = newVector.array;
         return *this;
     }else{
-        throw NULL;
+        throw 0;
     }
 }
 
