@@ -1,0 +1,3 @@
+"D:\Programme\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Semester_2.dir/objects.a
+"D:\Programme\CLion 2022.2.4\bin\mingw\bin\ar.exe" qc CMakeFiles\Semester_2.dir/objects.a @CMakeFiles\Semester_2.dir\objects1.rsp
+"D:\Programme\CLion 2022.2.4\bin\mingw\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\Semester_2.dir/objects.a -Wl,--no-whole-archive -o Semester_2.exe -Wl,--out-implib,libSemester_2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Semester_2.dir\linklibs.rsp
