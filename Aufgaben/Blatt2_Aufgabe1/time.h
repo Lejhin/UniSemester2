@@ -18,20 +18,20 @@ private:
 	unsigned int seconds;
 	unsigned int minutes;
 	unsigned int hours;
-	unsigned int calculateSeconds();
+	unsigned int calculateSeconds() const;
 public:
 
-	Time();
-	Time(unsigned int seconds, unsigned int minutes, unsigned int hours);
-	void time_print();
+	Time(unsigned int seconds = 0, unsigned int minutes = 0, unsigned int hours = 0);
+	void time_print() const;
 	void add_seconds( int seconds);
 	void add_minutes(int minutes);
 	void add_hours(int hours);
 	unsigned int get_seconds();
 	unsigned int get_minutes();
 	unsigned int get_hours();
-	unsigned int just_seconds();
+	unsigned int just_seconds() const;
 	void error_message(int Fehlercode);
+    int diff(const Time& other)const;
 
 
 };

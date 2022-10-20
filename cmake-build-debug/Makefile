@@ -128,101 +128,29 @@ Semester_2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/build
 .PHONY : Semester_2/fast
 
-Aufgaben/Aufgabe2_3/IntVector.obj: Aufgaben/Aufgabe2_3/IntVector.cpp.obj
-.PHONY : Aufgaben/Aufgabe2_3/IntVector.obj
+complex/main.obj: complex/main.cpp.obj
+.PHONY : complex/main.obj
 
 # target to build an object file
-Aufgaben/Aufgabe2_3/IntVector.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/IntVector.cpp.obj
-.PHONY : Aufgaben/Aufgabe2_3/IntVector.cpp.obj
+complex/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/complex/main.cpp.obj
+.PHONY : complex/main.cpp.obj
 
-Aufgaben/Aufgabe2_3/IntVector.i: Aufgaben/Aufgabe2_3/IntVector.cpp.i
-.PHONY : Aufgaben/Aufgabe2_3/IntVector.i
-
-# target to preprocess a source file
-Aufgaben/Aufgabe2_3/IntVector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/IntVector.cpp.i
-.PHONY : Aufgaben/Aufgabe2_3/IntVector.cpp.i
-
-Aufgaben/Aufgabe2_3/IntVector.s: Aufgaben/Aufgabe2_3/IntVector.cpp.s
-.PHONY : Aufgaben/Aufgabe2_3/IntVector.s
-
-# target to generate assembly for a file
-Aufgaben/Aufgabe2_3/IntVector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/IntVector.cpp.s
-.PHONY : Aufgaben/Aufgabe2_3/IntVector.cpp.s
-
-Aufgaben/Aufgabe2_3/gtest_main.obj: Aufgaben/Aufgabe2_3/gtest_main.cpp.obj
-.PHONY : Aufgaben/Aufgabe2_3/gtest_main.obj
-
-# target to build an object file
-Aufgaben/Aufgabe2_3/gtest_main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/gtest_main.cpp.obj
-.PHONY : Aufgaben/Aufgabe2_3/gtest_main.cpp.obj
-
-Aufgaben/Aufgabe2_3/gtest_main.i: Aufgaben/Aufgabe2_3/gtest_main.cpp.i
-.PHONY : Aufgaben/Aufgabe2_3/gtest_main.i
+complex/main.i: complex/main.cpp.i
+.PHONY : complex/main.i
 
 # target to preprocess a source file
-Aufgaben/Aufgabe2_3/gtest_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/gtest_main.cpp.i
-.PHONY : Aufgaben/Aufgabe2_3/gtest_main.cpp.i
+complex/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/complex/main.cpp.i
+.PHONY : complex/main.cpp.i
 
-Aufgaben/Aufgabe2_3/gtest_main.s: Aufgaben/Aufgabe2_3/gtest_main.cpp.s
-.PHONY : Aufgaben/Aufgabe2_3/gtest_main.s
-
-# target to generate assembly for a file
-Aufgaben/Aufgabe2_3/gtest_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/gtest_main.cpp.s
-.PHONY : Aufgaben/Aufgabe2_3/gtest_main.cpp.s
-
-Aufgaben/Aufgabe2_3/test_intvector1.obj: Aufgaben/Aufgabe2_3/test_intvector1.cpp.obj
-.PHONY : Aufgaben/Aufgabe2_3/test_intvector1.obj
-
-# target to build an object file
-Aufgaben/Aufgabe2_3/test_intvector1.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/test_intvector1.cpp.obj
-.PHONY : Aufgaben/Aufgabe2_3/test_intvector1.cpp.obj
-
-Aufgaben/Aufgabe2_3/test_intvector1.i: Aufgaben/Aufgabe2_3/test_intvector1.cpp.i
-.PHONY : Aufgaben/Aufgabe2_3/test_intvector1.i
-
-# target to preprocess a source file
-Aufgaben/Aufgabe2_3/test_intvector1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/test_intvector1.cpp.i
-.PHONY : Aufgaben/Aufgabe2_3/test_intvector1.cpp.i
-
-Aufgaben/Aufgabe2_3/test_intvector1.s: Aufgaben/Aufgabe2_3/test_intvector1.cpp.s
-.PHONY : Aufgaben/Aufgabe2_3/test_intvector1.s
+complex/main.s: complex/main.cpp.s
+.PHONY : complex/main.s
 
 # target to generate assembly for a file
-Aufgaben/Aufgabe2_3/test_intvector1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Aufgabe2_3/test_intvector1.cpp.s
-.PHONY : Aufgaben/Aufgabe2_3/test_intvector1.cpp.s
-
-Aufgaben/Blatt_3/3_2/bruchrechnen.obj: Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.obj
-.PHONY : Aufgaben/Blatt_3/3_2/bruchrechnen.obj
-
-# target to build an object file
-Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.obj
-.PHONY : Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.obj
-
-Aufgaben/Blatt_3/3_2/bruchrechnen.i: Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.i
-.PHONY : Aufgaben/Blatt_3/3_2/bruchrechnen.i
-
-# target to preprocess a source file
-Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.i
-.PHONY : Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.i
-
-Aufgaben/Blatt_3/3_2/bruchrechnen.s: Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.s
-.PHONY : Aufgaben/Blatt_3/3_2/bruchrechnen.s
-
-# target to generate assembly for a file
-Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.s
-.PHONY : Aufgaben/Blatt_3/3_2/bruchrechnen.cpp.s
+complex/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/complex/main.cpp.s
+.PHONY : complex/main.cpp.s
 
 # Help Target
 help:
@@ -233,18 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Semester_2
-	@echo ... Aufgaben/Aufgabe2_3/IntVector.obj
-	@echo ... Aufgaben/Aufgabe2_3/IntVector.i
-	@echo ... Aufgaben/Aufgabe2_3/IntVector.s
-	@echo ... Aufgaben/Aufgabe2_3/gtest_main.obj
-	@echo ... Aufgaben/Aufgabe2_3/gtest_main.i
-	@echo ... Aufgaben/Aufgabe2_3/gtest_main.s
-	@echo ... Aufgaben/Aufgabe2_3/test_intvector1.obj
-	@echo ... Aufgaben/Aufgabe2_3/test_intvector1.i
-	@echo ... Aufgaben/Aufgabe2_3/test_intvector1.s
-	@echo ... Aufgaben/Blatt_3/3_2/bruchrechnen.obj
-	@echo ... Aufgaben/Blatt_3/3_2/bruchrechnen.i
-	@echo ... Aufgaben/Blatt_3/3_2/bruchrechnen.s
+	@echo ... complex/main.obj
+	@echo ... complex/main.i
+	@echo ... complex/main.s
 .PHONY : help
 
 

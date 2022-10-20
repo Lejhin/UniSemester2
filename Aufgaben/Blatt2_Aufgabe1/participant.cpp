@@ -8,31 +8,31 @@
 unsigned int Participant::AnzahlTeilnehmer = 0;
 
 
-Participant::Participant(std::string name)
-{
+Participant::Participant(std::string name): name(name){
 	AnzahlTeilnehmer++;
-	this->name = name;
 }
 
-Participant::Participant(std::string name, Time time){
-
+Participant::Participant(std::string name, Time time) : name(name), time(time){
 	AnzahlTeilnehmer++;
-
-	this->name = name;
 }
 
 Participant::~Participant(){
-
 	AnzahlTeilnehmer--;
 }
 
 std::string Participant::get_name(){
-
 	return this->name;
 }
 
 Time Participant::get_time(){
 	return this->time;
+}
+
+void Participant::set_Time(int seconds, int minutes, int hours) {
+    time.add_seconds(seconds);
+    time.add_minutes(minutes);
+    time.add_hours(hours);
+
 }
 
 

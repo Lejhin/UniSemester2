@@ -24,7 +24,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Respository"/>
+					<Add directory="D:/Respository/complex"/>
 					<Add directory="D:/Programme/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
 					<Add directory="D:/Programme/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/Programme/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
@@ -47,7 +47,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/Respository"/>
+					<Add directory="D:/Respository/complex"/>
 					<Add directory="D:/Programme/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
 					<Add directory="D:/Programme/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/Programme/CLion 2022.2.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
@@ -84,25 +84,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/">
+		<Unit filename="D:/Respository/complex/complex.h">
 			<Option target="Semester_2"/>
 		</Unit>
-		<Unit filename="D:/Respository/Aufgaben/Aufgabe2_3/IntVector.cpp">
-			<Option target="Semester_2"/>
-		</Unit>
-		<Unit filename="D:/Respository/Aufgaben/Aufgabe2_3/IntVector.h">
-			<Option target="Semester_2"/>
-		</Unit>
-		<Unit filename="D:/Respository/Aufgaben/Aufgabe2_3/gtest_main.cpp">
-			<Option target="Semester_2"/>
-		</Unit>
-		<Unit filename="D:/Respository/Aufgaben/Aufgabe2_3/test_intvector1.cpp">
-			<Option target="Semester_2"/>
-		</Unit>
-		<Unit filename="D:/Respository/Aufgaben/Blatt 3/3_2/bruch.h">
-			<Option target="Semester_2"/>
-		</Unit>
-		<Unit filename="D:/Respository/Aufgaben/Blatt 3/3_2/bruchrechnen.cpp">
+		<Unit filename="D:/Respository/complex/main.cpp">
 			<Option target="Semester_2"/>
 		</Unit>
 		<Unit filename="D:/Respository/CMakeLists.txt">

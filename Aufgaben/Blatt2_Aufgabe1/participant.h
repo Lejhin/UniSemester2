@@ -21,10 +21,14 @@ private:
 public:
 	Participant(std::string name);
 	Participant(std::string name, Time time);
+    Participant(const Participant& p) : name(p.name), time(p.time){
+        AnzahlTeilnehmer++;
+    }
 	~Participant();
 
 
 	std::string get_name();
+    void set_Time(int seconds, int minutes, int hours);
 	Time get_time();
 };
 

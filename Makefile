@@ -1,11 +1,12 @@
-SRC_DIR = Aufgaben/Blatt3/3_2
+SRC_DIR = complex
 
 BUILD_DIR = $(SRC_DIR)
 CC = g++
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
-INCLUDE =  -I Include
-LIB = -L Lib 
-GTEST = -lgtest -lgtest_main -lpthread -L/usr/lib
+INCLUDE = -I Include #C:\opt\msys\mingw64\include\gtest\gtest.h
+LIB =  -L Lib  #C:\opt\msys\mingw64\lib\libgtest.a
+GTEST = -lgtest -lgtest_main -pthread
+
 
 all:
 	$(CC) $(INCLUDE) $(LIB) $(SRC_FILES) -o $(BUILD_DIR)/run.exe
@@ -15,6 +16,10 @@ gtest:
 
 clean: 
 	 $(RM) run
+
+debug: DEBUG = -DDEBUG
+
+
 
 
 
