@@ -8,8 +8,8 @@
 #include <string>
 #include <thread>
 
-#include <SFML/Graphics.hpp>
-
+//#include <SFML/Graphics.hpp>
+#include"C:\opt\msys\mingw64\include\SFML\Graphics.hpp"
 /** @file
  * @brief Graphische Unterstützung für Objektorientierte Programmierung (OOP)
  * und Algorithmen und Datenstrukturen

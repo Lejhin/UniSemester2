@@ -6,9 +6,13 @@
 
 int main(){
 
-    Bruch bruch(2,-3);
+    Bruch a = 1;
+    Bruch b(1,3);
 
-    bruch.out();
+    a = 2*b;
+
+    std::cout << a << std::endl;
+
 
 
 }

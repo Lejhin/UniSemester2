@@ -15,6 +15,7 @@ int main(){
 	//ifstream für input
 	//ofstream für output
 	ifstream file;
+
 	file.open("Aufgabe5/zahlen.txt");
 	int zahl;
 	while(file >> zahl){

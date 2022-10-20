@@ -13,8 +13,12 @@ class Bruch{
 private:
     int Zaehler;
     int Nenner;
-    int findeGemeinsamenTeiler(){
-
+    int findeGemeinsamenTeiler(int a, int b){
+        while (a != 0){
+            std::swap(a,b);
+            a%=b;
+        }
+        return b;
     }
 
     void switchVorzeichen(){
@@ -31,10 +35,12 @@ private:
     }
 public:
 
-    Bruch(int Zaehler, int Nenner) :Zaehler{Zaehler}, Nenner{Nenner}{
+    Bruch(int Zaehler, int Nenner = 1) :Zaehler{Zaehler}, Nenner{Nenner}{
 
-        this->Nenner = this->Nenner/findeGemeinsamenTeiler();
-        this->Zaehler = this->Zaehler/findeGemeinsamenTeiler();
+        int normal = findeGemeinsamenTeiler(this->Nenner, this->Zaehler);
+
+        this->Nenner = this->Nenner/normal;
+        this->Zaehler = this->Zaehler/normal;
         normalisieren();
     }
 
@@ -42,10 +48,6 @@ public:
     Bruch(const Bruch& bruch){
         this->Zaehler = bruch.Zaehler;
         this->Nenner = bruch.Nenner;
-    }
-
-    void out() const{
-        std::cout << Zaehler << "/" << Nenner << std::endl;
     }
 
     int zaehler()const{
@@ -57,7 +59,7 @@ public:
 
 
 
-    bool operator==( const Bruch& bruch){
+    bool operator==( const Bruch& bruch)const{
         if(bruch.Nenner == this->Nenner){
             if(bruch.Zaehler == this->Zaehler){
                 return true;
@@ -66,7 +68,7 @@ public:
         return false;
     }
 
-    bool operator!=( const Bruch& bruch){
+    bool operator!=( const Bruch& bruch)const{
         if(bruch.Nenner != this->Nenner){
             return true;
         }
@@ -75,25 +77,37 @@ public:
         }
         return false;
     }
-    Bruch operator*=(const Bruch& bruch){
+    Bruch& operator*=(const Bruch& bruch){
         this->Zaehler *= bruch.Zaehler;
         this->Nenner *= bruch.Nenner;
         return *this;
     }
 
     Bruch operator*(const Bruch& bruch){
-        int Zähler = this->Zaehler * bruch.Zaehler;
+        int Zaehler = this->Zaehler * bruch.Zaehler;
         int nenner = this->Zaehler * bruch.Nenner;
 
-        return Bruch(Zähler, Nenner);
+        return Bruch(Zaehler, nenner);
     }
     Bruch operator*(const int Zahl) {
-        int Zähler = this->Zaehler * Zahl;
+        int Zaehler = this->Zaehler * Zahl;
         int nenner = this->Zaehler * Zahl;
 
-        return Bruch(Zähler, Nenner);
+        return Bruch(Zaehler, nenner);
     }
 
 };
+
+std::ostream& operator<<(std::ostream& out,Bruch a){
+    if(a.nenner() == 1){
+     return out << a.zaehler();
+    }
+    return out << a.zaehler() << "/" << a.nenner();
+}
+
+inline Bruch operator*(const int Zahl,const Bruch b){
+    return Bruch(b.zaehler()*Zahl);
+}
+
 
 #endif //SEMESTER_2_BRUCH_H

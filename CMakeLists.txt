@@ -7,3 +7,5 @@ include_directories(complex)
 add_executable(Semester_2
         complex/complex.h complex/main.cpp)
 
+include_directories("C:/opt/msys/mingw64/include")
+
