@@ -23,11 +23,40 @@ public:
     }
 };
 
+class sharedPointer{
+
+private:
+  Noisy* p;
+  int* counter;
+public:
+
+    sharedPointer(Noisy* p) : p(p){
+        counter = new int(1);
+    }
+    sharedPointer(const sharedPointer& other): p(other.p){
+        (*counter)++;
+    }
+
+    ~sharedPointer(){
+        (*counter)--;
+        if(*counter == 0){
+            delete p;
+            delete counter;
+        }
+    }
+
+
+
+
+};
 
 int main(){
 
     Noisy* a = new Noisy("a");
     uniqueNoisy b(new Noisy("B"));
+    sharedPointer c(new Noisy("z"));
+    sharedPointer d(new Noisy("c"));
+    d = c;
 }
 
 
