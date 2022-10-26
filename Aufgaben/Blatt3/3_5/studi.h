@@ -24,7 +24,7 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& out, Studi a){
-    return out << a.getMatNr() << " " << a.getVorname() << "" <<  a.getNachname();
+    return out << a.getMatNr() << " " << a.getVorname() << " " <<  a.getNachname();
 
 }
 
