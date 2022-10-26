@@ -33,7 +33,7 @@ public:
     sharedPointer(Noisy* p) : p(p){
         counter = new int(1);
     }
-    sharedPointer(const sharedPointer& other): p(other.p){
+    sharedPointer(const sharedPointer& other): p(other.p), counter(other.counter){
         (*counter)++;
     }
 

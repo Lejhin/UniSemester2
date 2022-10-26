@@ -17,14 +17,13 @@ int main() {
     file.open("Aufgaben/Blatt3/3_5/studis.txt");
 
     std::string buffer;
-    long localMatr;
-    std::string localVorname;
-    std::string localNachname;
-    std::vector<string>line;
 
-    while (file >> localMatr >> localVorname >> localNachname) {
-        Uni.push_back(Studi(localMatr, localVorname, localNachname));
+    Studi temp;
+
+    while (file >> temp) {
+        Uni.push_back(temp);
     }
+
 
     for(int i = 0; i < Uni.size(); ++i){
         std::cout << Uni.at(i) << std::endl;

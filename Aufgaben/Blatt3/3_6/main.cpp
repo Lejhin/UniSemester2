@@ -37,8 +37,6 @@ int main(int argc, char **argv) {
         }
             std::cout << "amount of Values: " << Values.size() << "\n"
                       << "Max Value = " << currentMax << std::endl;
-
-
     } else {
         std::cerr << "Wrong path" << std::endl;
     }
