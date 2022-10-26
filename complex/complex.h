@@ -15,50 +15,54 @@ private:
 public:
     Complex(double real = 0, double imag = 0) : real(real), imag(imag){
     }
-
-
-
     Complex& operator=(double _real){
         this->real = _real;
         this->imag = 0;
         return *this;
     }
-
     Complex& operator+=(Complex right){
         this->real += right.real;
         this-> imag += right.imag;
         return *this;
-
     }
-
     Complex operator*(Complex right)const{
         double tempReal = real*right.getReal() - imag*right.getImag();
         double tempImag = imag*right.getImag() - real*right.getReal();
         return Complex(tempReal, tempImag);
     }
+    Complex& operator++(){
+        real++;
+        return *this;
+    }
 
-
+    Complex operator++(int a){
+        Complex temp = *this;
+        real++;
+        return temp;
+    }
 
     double getReal()const{return real;}
     double getImag()const{return imag;}
-
-
-
-
+    friend std::istream& operator>> (std::istream& in, Complex& complex);
 
 
 };
 
 inline Complex operator+(Complex left, Complex right){
-    double tempReal = left.getReal() + right.getReal();
-    double tempImag = left.getImag() + right.getImag();
-    return Complex(tempReal, tempImag);
+    double tempReal = left.getReal() + right.getReal();double tempImag = left.getImag() + right.getImag();
+    return Complex{tempReal, tempImag};
 }
 
 
-std::ostream& operator<<(std::ostream& out, Complex a){
+std::ostream& operator<<(std::ostream& out, Complex a) {
     return out << '(' << a.getReal() << '+' << a.getImag() << "i)";
 
+}
+
+inline std::istream& operator>>(std::istream& in, Complex& complex){
+    in >> complex.imag;
+    in >> complex.real;
+    return in;
 }
 
 

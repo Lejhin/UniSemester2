@@ -1,4 +1,4 @@
-SRC_DIR = Aufgaben/Blatt3/3_6
+SRC_DIR = complex
 
 BUILD_DIR = $(SRC_DIR)
 CC = g++
