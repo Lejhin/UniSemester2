@@ -1,4 +1,4 @@
-ToolSet: w64 9.0 (local)@D:\Programme\CLion 2022.2.4\bin\mingw
+ToolSet: w64 9.0 (local)@D:\Programms\CLion 2022.2.3\bin\mingw
 Options: 
 
-Options:
+Options:-DCMAKE_MAKE_PROGRAM=D:/Programms/CLion 2022.2.3/bin/ninja/win/ninja.exe

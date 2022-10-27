@@ -1,8 +1,3 @@
 # ninja log v5
-1	313	6857462804022374	CMakeFiles/Semester_2.dir/Test1/main.cpp.obj	d87c21d0f3c3bd13
 291	383	6857483443974186	Semester_2.exe	1653fe3e9145e98c
-0	143	6867709034438278	build.ninja	1742e691626102e5
-2	290	6857483443086293	CMakeFiles/Semester_2.dir/Test2/main.cpp.obj	b580ea56bfd40538
-5	319	6857472528127843	CMakeFiles/Semester_2.dir/Test2/src/Uni.cpp.obj	8d6633435b5ab107
-1	175	6867709034438278	build.ninja	1742e691626102e5
-7	571	6867709040731995	CMakeFiles/Semester_2.dir/Aufgabe2_3/IntVector.cpp.obj	dd682493ed9fb456
+1	175	6885966590296084	build.ninja	1742e691626102e5

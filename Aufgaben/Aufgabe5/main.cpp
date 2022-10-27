@@ -16,7 +16,7 @@ int main(){
 	//ofstream für output
 	ifstream file;
 
-	file.open("Aufgabe5/zahlen.txt");
+	file.open("Aufgaben/Aufgabe5/zahlen.txt");
 	int zahl;
 	while(file >> zahl){
 		cout << zahl << endl;
