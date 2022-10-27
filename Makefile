@@ -1,4 +1,4 @@
-SRC_DIR = Aufgaben/Blatt3/3_5
+SRC_DIR = Templates
 
 BUILD_DIR = $(SRC_DIR)
 CC = g++
