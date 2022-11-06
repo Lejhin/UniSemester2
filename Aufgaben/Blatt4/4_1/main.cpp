@@ -5,9 +5,14 @@
 #include <iostream>
 #include "templates.h"
 
-int main(){
+int main() {
 
-    int vec[4] {1,2,3,4};
+
+    int vec[] = {1, 2, 3, 4};
+    const char* charvec[] = {"zgv", "deef", "abcdefghji",  "a"};
+    std::cout << Max(charvec, 4) << std::endl;
     std::cout << Max(vec, 4) << std::endl;
 
+
 }
+

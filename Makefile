@@ -1,4 +1,5 @@
-SRC_DIR = Aufgaben/Blatt4/4_1
+SRC_DIR = Testat
+
 
 BUILD_DIR = $(SRC_DIR)
 CC = g++
