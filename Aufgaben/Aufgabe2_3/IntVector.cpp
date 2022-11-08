@@ -48,7 +48,7 @@ IntVector& IntVector::operator=( const IntVector& newVector) {
         throw 0;
     }
 }
-
+//Kopierkonstruktor
 IntVector::IntVector(const IntVector &newVector) {
     this->array = new int[newVector.len];
     len = newVector.len;

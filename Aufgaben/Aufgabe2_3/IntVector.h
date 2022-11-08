@@ -21,4 +21,8 @@ public:
     void out();
 };
 
+// Intvector a;
+//Intvector b(a);
+
+
 #endif //SEMESTER_2_INTVECTOR_H
