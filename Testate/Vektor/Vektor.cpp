@@ -26,25 +26,25 @@ Vektor::~Vektor() {
 Vektor::Vektor(const Vektor &other) {
     _len = other._len;
     _vek = new double[_len];
-    for (unsigned i = 0; i < _len; ++i) {
+    for (int i = 0; i < _len; ++i) {
         _vek[i] = other._vek[i];
     }
 }
 
 Vektor &Vektor::operator=(const Vektor &other) {
+    delete[] _vek;
     _vek = new double[other._len];
     _len = other._len;
     for(int i = 0; i < _len; ++i){
         _vek[i] = other._vek[i];
     }
 }
-
 Vektor operator+(Vektor left, Vektor right) {
 
     if(left.get_len() == right.get_len()){
         Vektor temp(left.get_len());
         for(int i = 0; i < left.get_len(); ++i){
-            temp[i] = left[i] += right[i];
+            temp[i] = left[i] + right[i];
         }
         return temp;
     }else{
@@ -53,11 +53,10 @@ Vektor operator+(Vektor left, Vektor right) {
     }
 
 }
-
 void Vektor::resize(unsigned l) {
     Vektor temp(l);
     for(int i = 0; i < l; ++i){
-        if(_len >= i){
+        if(i < _len){
             temp._vek[i] = _vek[i];
         }else{
             temp._vek[i] = 0;
@@ -69,5 +68,6 @@ void Vektor::resize(unsigned l) {
         _vek[i] = temp._vek[i];
     }
     _len = l;
-
 }
+
+

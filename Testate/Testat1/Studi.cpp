@@ -8,7 +8,7 @@ Studi::Studi(): _matnr(0){
 Studi::Studi(long matnr, string vorname, string nachname): _matnr(matnr), _vorname(vorname), _nachname(nachname) {
 }
 
-Studi::Studi(const Studi &other) {
+Studi::Studi(const Studi &other ) {
     _vorname = other._vorname;
     _nachname = other._nachname;
     _image = new char[other.get_image_size()];

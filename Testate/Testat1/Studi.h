@@ -22,7 +22,7 @@ public:
     void set_image(char *image, int size);
 
     // get_* ist nur zur Verwendung im Test, nicht ändern
-    char *get_image() const { return _image; } 
+    char *get_image() const{ return _image; }
     int get_image_size() const { return _image_size; }
 private:
     long _matnr;

@@ -11,10 +11,13 @@ template<typename T, size_t len >
 class CommonVector{
 private:
     T* vector;
+
+
 public:
 
     CommonVector(): vector(new T[len]{}){
     }
+    //für char array;
     CommonVector(const T* temp): vector(new T[len]{}){
        for(int i = 0; i < len; ++i){
             if(i < std::strlen(temp)){
@@ -24,6 +27,7 @@ public:
             }
         }
     }
+    //für alle anderen arrays;
    CommonVector(std::initializer_list<T> l): vector(new T[len]) {
        for (int i = 0; i < len; ++i) {
            if(i < l.size()){

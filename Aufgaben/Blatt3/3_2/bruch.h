@@ -98,7 +98,7 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& out,Bruch a){
+inline std::ostream& operator<<(std::ostream& out,Bruch a){
     if(a.nenner() == 1){
      return out << a.zaehler();
     }

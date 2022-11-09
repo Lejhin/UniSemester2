@@ -1,4 +1,4 @@
-SRC_DIR = Testat
+SRC_DIR = Testate/Haupttestat1
 
 
 BUILD_DIR = $(SRC_DIR)
