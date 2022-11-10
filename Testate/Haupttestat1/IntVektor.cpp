@@ -33,7 +33,7 @@ public:
     }
     //Kopier-Konstruktor
     IntVector(IntVector& other){
-        array = new int[other.array[0+1]];
+        array = new int[other.array[0]];
         for(int i = 0; i < other.array[0]; ++i){
             array[i] = other.array[i];
         }
@@ -42,7 +42,7 @@ public:
     //Operator Überladung
     IntVector& operator=(IntVector& other){
         delete[] array;
-        array = new int[other.array[0]+1];
+        array = new int[other.array[0]];
         for(int i = 0; i < other.array[0]; ++i){
             array[i] = other.array[i];
         }
