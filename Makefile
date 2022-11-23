@@ -1,4 +1,5 @@
-SRC_DIR = Aufgaben/Blatt6/6_2
+SRC_DIR = Aufgaben/Blatt6/6_3
+
 
 
 BUILD_DIR = $(SRC_DIR)

@@ -84,6 +84,8 @@ void QuickSortSkript(std::vector<int>& a, size_t li, size_t re){
     QuickSortSkript(a, li, end);
 }
 
+
+
 void BucketSort(std::vector<int>& a){
     int min = a.at(0);
     int max = a.at(0);
@@ -96,7 +98,7 @@ void BucketSort(std::vector<int>& a){
             max = element;
         }
     }
-    std::cout << "min: " << min << "    " << "max: "<< max << std::endl;
+    //std::cout << "min: " << min << "    " << "max: "<< max << std::endl;
     std::vector<int> Array(max-min+1, 0);
 
       for(auto element: a){
