@@ -11,6 +11,7 @@ private:
 public:
 
     Noisy(std::string name);
+    Noisy(const Noisy& other);
     ~Noisy();
     static int get_counter();
 

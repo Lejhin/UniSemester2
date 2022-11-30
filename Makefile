@@ -1,4 +1,4 @@
-SRC_DIR = Aufgaben/Blatt6/6_3
+SRC_DIR = Aufgaben/Blatt8/8_1
 
 
 

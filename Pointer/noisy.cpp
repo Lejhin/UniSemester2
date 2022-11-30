@@ -8,6 +8,10 @@ Noisy::Noisy(std::string name){
     counter++;
 
 }
+Noisy::Noisy(const Noisy &other) {
+    counter++;
+    name = other.name;
+}
 Noisy::~Noisy(){
     counter--;
     std::cout << counter << std::endl;
