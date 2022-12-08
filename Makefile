@@ -1,4 +1,4 @@
-SRC_DIR = Aufgaben/Blatt8/8_1
+SRC_DIR = vererbung
 
 
 

@@ -29,7 +29,7 @@ public:
     ~Sequence(){delete[] array;}
 
     T& operator[](size_t n){
-        if(n < 0 || n >> cap || (n << cap&&  n > len)){
+        if(n >> cap || (n << cap&&  n > len)){
             throw std::runtime_error("out of bounds");
         }else{
             return array[n];
@@ -58,7 +58,6 @@ public:
         if(n == 0){
             n = 1;
         }
-
        T* tempArray = new T[cap+n]{0};
        for(size_t i = 0; i < cap; ++i){
            tempArray[i] = array[i];
@@ -67,11 +66,6 @@ public:
        delete[] array;
        array = tempArray;
     }
-    /*void resize(size_t n){
-        cap+=n;
-        Sequence<T> temp(*this);
-        *this = temp;
-    }*/
 
     void push_back(T element){
         if(!fitsInArray()){
@@ -82,7 +76,7 @@ public:
     }
 
     void insert(T element, size_t idx){
-        if(idx < 0 || idx > cap){
+        if( idx > cap){
             throw std::runtime_error("index out of bounds");
         }
         else{

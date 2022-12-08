@@ -7,14 +7,10 @@
 
 
 int main(){
-    Sequence<Studi> Array(1);
-
-
 
     std::ifstream file;
     file.open("Aufgaben/Blatt3/3_5/studis.txt");
-
-    std::string buffer;
+    Sequence<Studi> Array(1);
     Studi temp;
 
     while (file >> temp) {
