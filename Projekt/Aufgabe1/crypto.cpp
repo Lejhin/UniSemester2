@@ -7,18 +7,20 @@
 #include "ooptool.h"
 #include "common.h"
 
+
 int main(int argc, char** argv){
 
     //information extraction and encryption/decryption
     char ReadBuffer;
-    char InputKey;
+    char InputKey = 3;
     std::vector<char> message;
     std::vector<char> encryptedMessage;
     argsp_t programmArguments(argc, argv);
     std::ifstream Readfile;
-    std::fstream Appendfile;
+    std::fstream AppendFile;
     Frequency F1;
 
+    std::vector<char> secret = {'s','e', 'c','r', 'e','t'};
     //
 
     if(argc < 2){
@@ -32,7 +34,6 @@ int main(int argc, char** argv){
         std::runtime_error("incorrect Path was set");
     }
 
-
     //Extracting file information
     //doesn't skip the white spaces anymore
     Readfile >> std::noskipws;
@@ -41,37 +42,17 @@ int main(int argc, char** argv){
     }
     Readfile.close();
 
-    Appendfile.open("Projekt/Aufgabe1/encrypt.txt", std::fstream::app);
-/*
-    std::cout << "Key: ";
-    std::cin >> InputKey;
-    std::cout << std::endl;
-
-    key key(InputKey);
+    AppendFile.open("Projekt/Aufgabe1/encrypt.txt", std::fstream::app);
 
 
+    decrypt('j', message, encryptedMessage);
 
-    std::cout << message.size() << std::endl;
-    //encrypting message
-    for(char character: message){
-        char encryptedChar = key.encrypt(character);
-        encryptedMessage.push_back(encryptedChar);
-        Appendfile << encryptedChar;
-
-    }
-    std::cout << "correctly encrypted" << std::endl;
-
-    Appendfile << "\n";
-    for(char character: encryptedMessage){
-        char decryptedChar = key.decrypt(character);
-        Appendfile << decryptedChar;
-    }*/
+    //F1.calculateRelativeFrequency(message);
+    //F1.printFrequency();
 
 
-    F1.calculateRelativeFrequency(message);
-    F1.printFrequency();
-
-    std::cout << "correctly decrypted" << std::endl;
-
-    Appendfile.close();
+    WriteToFile(encryptedMessage, AppendFile);
+    AppendFile.close();
 }
+
+

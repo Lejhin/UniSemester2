@@ -6,23 +6,26 @@
 #define SEMESTER_2_COMMON_H
 #include <iostream>
 #include <vector>
-class key{
+#include <fstream>
+class Key{
 private:
     int value;
 public:
-    key(char input=3){
-        if(input <= 122 && input >=97){
-            value = (int)input%96;
+    Key(char input=3){
+
+        if(input<= 122 && input >=97){
+            value = input%97;
         }else{
             value = 3;
             std::cerr << "wrong key input. Standart key was used.";
         }
+
     }
-    key(key& other){
+    Key(Key& other){
         this->value = other.value;
     }
 
-    void operator=(key& other){
+    void operator=(Key& other){
         this->value = other.value;
     }
     void operator=(int other){
@@ -36,23 +39,23 @@ public:
     //Aufgabe 1
     char encrypt(char ToEncrypt){
         int newValue = ToEncrypt;
-
+        //91 / 123 so Z (which would be 122/122 = 1) spill to the other side
         if(ToEncrypt <= 90 && ToEncrypt >= 65){//Großbuchstaben
-            newValue = ((ToEncrypt+value)/90)*65 + (ToEncrypt+value)%90;
+            newValue = ((ToEncrypt+value)/91)*65 + (ToEncrypt+value)%91;
         }else if(ToEncrypt <= 122 && ToEncrypt >=97){ //kleine Buchstaben
-            newValue = ((ToEncrypt+value)/122)*97 + (ToEncrypt+value)%122;
-
+            newValue = ((ToEncrypt+value)/123)*97+ (ToEncrypt+value)%123;
         }
         return newValue;
     }
 
     //Aufgabe 2;
     char decrypt(char ToDecrypt){
+
         int newValue = ToDecrypt;
         if(ToDecrypt <= 90 && ToDecrypt >= 65){//Großbuchstaben
-            newValue = (ToDecrypt-value)+ (64/(ToDecrypt-value))*25;
+            newValue = (ToDecrypt-value)+ (64/(ToDecrypt-value))*26;
         }else if(ToDecrypt <= 122 && ToDecrypt >=97){ //kleine Buchstaben
-            newValue = (ToDecrypt-value) + (96/(ToDecrypt-value))*25;
+            newValue = (ToDecrypt-value) + (96/(ToDecrypt-value))*26;
         }
         return newValue;
     }
@@ -71,7 +74,6 @@ private:
             std::cerr << "index too high";
             throw "b";
         }
-
         return int(double(Array[index])/double(totalCharCount)*100);
     }
 public:
@@ -122,5 +124,15 @@ public:
     }
 };
 
+//single ceasar encryption
+void encrypt(int key, std::vector<char>& message, std::vector<char>& outPut);
+//multiple encryption with string of keys
+void encrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut);
+//single ceasar decryption
+void decrypt(int key, std::vector<char>& message, std::vector<char>& outPut);
+//multiple decryption with string of keys
+void decrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut);
+//appending to outputfile
+void WriteToFile(std::vector<char>& input, std::fstream& file);
 
 #endif //SEMESTER_2_COMMON_H
