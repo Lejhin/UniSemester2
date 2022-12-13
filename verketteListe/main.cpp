@@ -23,6 +23,9 @@ int main(){
         l.insert(0,i);
     }
 
+    for(auto element: l){
+
+    }
     for(Linked_list<int>::iterator curr = l.begin(); curr!= l.end(); ++curr){
 
         std::cout << *curr << std::endl;

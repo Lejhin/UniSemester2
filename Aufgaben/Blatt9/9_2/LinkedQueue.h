@@ -17,6 +17,35 @@ private:
     Node* tail;
 
 public:
+    class iterator{
+    private:
+        Node* current;
+    public:
+        iterator(Node* current): current(current){
+        }
+        bool operator!=(iterator other){
+            return current != other.current;
+        }
+        iterator& operator++(){
+            current = current->next;
+            return *this;
+        }
+
+        T& operator*(){
+            return current->element;
+        }
+
+    };
+
+
+    T operator[](size_t idx){
+        Node* current = head;
+        for(int i = 0; i < idx; ++i){
+            current = current->next;
+        }
+        return current->element;
+    };
+
     LinkedQueue(){
         head = nullptr;
         tail = nullptr;
@@ -69,6 +98,9 @@ public:
         }
         return i;
     }
+
+    iterator begin()const {return head;}
+    iterator end()const {return nullptr;}
 };
 
 #endif //SEMESTER_2_LINKEDQUEUE_H

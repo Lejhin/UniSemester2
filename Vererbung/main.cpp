@@ -26,6 +26,9 @@ public:
     ~C(){delete c; std::cout << "~C()" << std::endl;}
 };
 
+class D final : public B{
+
+};
 
 int main(){
    C bobj;

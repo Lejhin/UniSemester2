@@ -6,6 +6,7 @@
 #define SEMESTER_2_INTVECTOR_H
 #include <iostream>
 
+
 class IntVector{
 private:
     int* array;
