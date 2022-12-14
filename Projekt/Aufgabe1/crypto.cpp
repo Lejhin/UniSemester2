@@ -76,10 +76,10 @@ int main(int argc, char** argv){
             refFreq.push_back(element.second);
         }
 
+
+
         KeyVector.clear();
         KeyVector.push_back(breakCeaser(message,refFreq));
-        std::cout << KeyVector[0]<< std::endl;
-
 
     }
 

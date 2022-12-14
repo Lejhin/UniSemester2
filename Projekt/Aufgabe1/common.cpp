@@ -52,6 +52,8 @@ void print(std::vector<char>& message){
 // -> if the difference between the Reference and current character-Frequency is smaller than the current best one,
 //the current character gets a point. If the entire character Frequency has more points than the current best one, the current
 //Frequency becomes best one. After all Loops, the index of the best one gets returned
+
+//BUG -- needs at least 56 characters to correctly break the ceaser encryption.
 int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
     int index=0;
     Frequency CurrentBestFreq;
