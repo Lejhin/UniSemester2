@@ -7,6 +7,7 @@ protected:
     int* a;
 public:
     A(int val=17){a = new int(val); std::cout << "A() = " << *a  << std::endl;}
+    //string gibLaut() = 0;
     ~A(){delete a;  std::cout << "~A()" << std::endl; }
 };
 
@@ -14,6 +15,7 @@ class B :public A{
 protected:
     long* b;
 public:
+    //string gibLaut() = {return "wau"};
     B(long val= 42){b = new long(val + *a); std::cout << "B() = " << *b << std::endl;}
     ~B(){delete b; std::cout << "~B()" << std::endl;}
 
