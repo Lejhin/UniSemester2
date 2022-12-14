@@ -4,14 +4,6 @@
 
 #include "common.h"
 
-void encrypt(int key, std::vector<char>& message, std::vector<char>& outPut){
-
-    Key k1(key);
-    for(char character: message){
-        char encryptedChar = k1.encrypt(character);
-        outPut.push_back(encryptedChar);
-    }
-}
 
 
 void encrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut) {
@@ -20,22 +12,13 @@ void encrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vect
         if (i >= keyVector.size()) {
             i = 0;
         }
-
         Key k1(keyVector.at(i));
-        std::cout << k1.getKey() << " ";
         i++;
         char decrypted = k1.encrypt(character);
         outPut.push_back(decrypted);
     }
 }
 
-void decrypt(int key, std::vector<char>& message, std::vector<char>& outPut){
-    Key DecryptKey(key);
-    for(char character: message){
-        char decryptedChar = DecryptKey.decrypt(character);
-        outPut.push_back(decryptedChar);
-    }
-}
 
 void decrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut){
     int i = 0;
@@ -44,7 +27,6 @@ void decrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vect
             i = 0;
         }
         Key k1(keyVector.at(i));
-        std::cout << i;
         i++;
         char decrypted = k1.decrypt(character);
         outPut.push_back(decrypted);
@@ -52,10 +34,66 @@ void decrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vect
 }
 
 void WriteToFile(std::vector<char>& input, std::fstream& file){
-    file << "\n\n";
+
     for(char character:input){
         file << character;
     }
+}
+
+void print(std::vector<char>& message){
+    for(char character:message){
+        std::cout<< character;
+    }
+    std::cout << std::endl;
+}
 
 
+//Task 5
+// -> if the difference between the Reference and current character-Frequency is smaller than the current best one,
+//the current character gets a point. If the entire character Frequency has more points than the current best one, the current
+//Frequency becomes best one. After all Loops, the index of the best one gets returned
+int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
+    int index=0;
+    Frequency CurrentBestFreq;
+    int BestSumMax= 0;
+    CurrentBestFreq.calculateRelativeFrequency(message);
+    std::vector<char> localEncryption;
+    std::vector<char> localKeyVec;
+    //Decrypts with all possible keys and generates their corresponding Frequencies
+    for(int i = 97; i < 122; ++i ){
+        Frequency localFreq;
+        localKeyVec.push_back(i);
+        decrypt(localKeyVec, message, localEncryption);
+        localKeyVec.clear();
+        localFreq.calculateRelativeFrequency(localEncryption);
+        //temporary Sum of all moments in which the current Frequency was closer to the Reference than the current best one
+        int localSumMax = 0;
+        for(int j = 97; j < 122; ++j){
+            if(diff(localFreq.calcPercent(j%97), reffreq[j%97]) < diff(CurrentBestFreq.calcPercent(j%97),reffreq[j%97])){
+                localSumMax++;
+            }
+        }
+        if(!i){
+            //sets the first Frequency as the currently best one
+            BestSumMax = localSumMax;
+        }else{
+            if(localSumMax > BestSumMax){
+                BestSumMax = localSumMax;
+                index = i;
+            }
+        }
+        //the local encryption only appends -> clear the old encrypted vector to make space for the new one
+        localEncryption.clear();
+    }
+    return index;
+}
+
+
+//outputs the positive difference of two values
+double diff(double value1, double value2){
+    if(value1-value2 < 0){
+        return value2-value1;
+    }else{
+        return value1-value2;
+    }
 }

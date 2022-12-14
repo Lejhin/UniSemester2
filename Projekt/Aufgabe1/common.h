@@ -12,19 +12,14 @@ private:
     int value;
 public:
     Key(char input=3){
-
         if(input<= 122 && input >=97){
             value = input%97;
         }else{
             value = 3;
             std::cerr << "wrong key input. Standart key was used.";
         }
-
     }
-    Key(Key& other){
-        this->value = other.value;
-    }
-
+    //for potential use
     void operator=(Key& other){
         this->value = other.value;
     }
@@ -32,11 +27,10 @@ public:
         this->value = other;
     }
 
-
     long getKey(){return value;}
 
-
-    //Aufgabe 1
+    //Task 1
+    //encrypts one char
     char encrypt(char ToEncrypt){
         int newValue = ToEncrypt;
         //91 / 123 so Z (which would be 122/122 = 1) spill to the other side
@@ -47,8 +41,8 @@ public:
         }
         return newValue;
     }
-
     //Aufgabe 2;
+    //decrypts one char
     char decrypt(char ToDecrypt){
 
         int newValue = ToDecrypt;
@@ -69,13 +63,15 @@ private:
     size_t size;
     size_t totalCharCount = 0;
 
-    int calcPercent(size_t index)const{
-        if(index > size){
-            std::cerr << "index too high";
-            throw "b";
+    int round(double value)const{
+        if(double(value-int(value)) >= 0.5){
+           value = value+1;
+        }else{
+           value = value;
         }
-        return int(double(Array[index])/double(totalCharCount)*100);
+        return value;
     }
+
 public:
     Frequency( size_t size): size(size){
         Array = new int[size]{};
@@ -86,7 +82,6 @@ public:
     ~Frequency(){
         delete[] Array;
     }
-
     void operator=(Frequency& other){
         this->size = other.size;
         this->totalCharCount = other.totalCharCount;
@@ -97,12 +92,16 @@ public:
         }
     }
 
+    int* getArray()const{return Array;}
     size_t Size()const{return size;}
+
     void calculateRelativeFrequency(std::vector<char>& message){
+
         for(char character: message){
             if(character <= 90 && character >= 65){
                 Array[character%65]++;
                 totalCharCount++;
+
             }
             if(character <= 122 && character >= 97){
                 Array[character%97]++;
@@ -111,10 +110,18 @@ public:
         }
     }
 
-    void printFrequency()const{
+    double calcPercent(size_t index)const{
+        if(index > totalCharCount ){
+            std::cerr << "index too high";
+            throw "b";
+        }
+        return double(Array[index])/double(totalCharCount)*100;
+    }
 
+
+    void printFrequency()const{
         for(int i = 0; i < size; ++i){
-            int starCount = calcPercent(i);
+            int starCount = round(calcPercent(i));
             std::cout << char(i+97) << ":   ";
             for(int j = 0; j < starCount; ++j){
                 std::cout << "*";
@@ -124,15 +131,18 @@ public:
     }
 };
 
-//single ceasar encryption
-void encrypt(int key, std::vector<char>& message, std::vector<char>& outPut);
-//multiple encryption with string of keys
+
 void encrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut);
-//single ceasar decryption
-void decrypt(int key, std::vector<char>& message, std::vector<char>& outPut);
-//multiple decryption with string of keys
+
 void decrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut);
+
 //appending to outputfile
 void WriteToFile(std::vector<char>& input, std::fstream& file);
+
+double diff(double value1, double value2);
+
+int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq);
+
+void print(std::vector<char>& message);
 
 #endif //SEMESTER_2_COMMON_H
