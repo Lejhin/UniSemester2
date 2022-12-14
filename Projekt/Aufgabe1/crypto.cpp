@@ -60,7 +60,7 @@ int main(int argc, char** argv){
     //Programhandling
 
     //Task 5
-    if(programmArguments.has_option("c")){
+    if(programmArguments.flag("c")){
         if(programmArguments.has_option("cfreq")){
             RefFile.open(programmArguments.option("cfreq"));
         }else{
@@ -78,7 +78,7 @@ int main(int argc, char** argv){
 
         KeyVector.clear();
         KeyVector.push_back(breakCeaser(message,refFreq));
-
+        std::cout << KeyVector[0]<< std::endl;
 
 
     }

@@ -69,7 +69,7 @@ int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
         //temporary Sum of all moments in which the current Frequency was closer to the Reference than the current best one
         int localSumMax = 0;
         for(int j = 97; j < 122; ++j){
-            if(diff(localFreq.calcPercent(j%97), reffreq[j%97]) < diff(CurrentBestFreq.calcPercent(j%97),reffreq[j%97])){
+            if(diff(localFreq.calcPercent(j%97), reffreq[j%97]) <diff(CurrentBestFreq.calcPercent(j%97),reffreq[j%97])){
                 localSumMax++;
             }
         }
@@ -77,6 +77,8 @@ int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
             //sets the first Frequency as the currently best one
             BestSumMax = localSumMax;
         }else{
+            //only works on large texts. If the text is too small, the differences are too small
+            //to differenciate between 26 different encryptions
             if(localSumMax > BestSumMax){
                 BestSumMax = localSumMax;
                 index = i;

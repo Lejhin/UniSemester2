@@ -111,7 +111,7 @@ public:
     }
 
     double calcPercent(size_t index)const{
-        if(index > totalCharCount ){
+        if(index > size ){
             std::cerr << "index too high";
             throw "b";
         }
