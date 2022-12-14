@@ -12,19 +12,14 @@ private:
     int value;
 public:
     Key(char input=3){
-
         if(input<= 122 && input >=97){
             value = input%97;
         }else{
             value = 3;
             std::cerr << "wrong key input. Standart key was used.";
         }
-
     }
-    Key(Key& other){
-        this->value = other.value;
-    }
-
+    //for potential use
     void operator=(Key& other){
         this->value = other.value;
     }
@@ -32,11 +27,10 @@ public:
         this->value = other;
     }
 
-
     long getKey(){return value;}
 
-
-    //Aufgabe 1
+    //Task 1
+    //encrypts one char
     char encrypt(char ToEncrypt){
         int newValue = ToEncrypt;
         //91 / 123 so Z (which would be 122/122 = 1) spill to the other side
@@ -47,8 +41,8 @@ public:
         }
         return newValue;
     }
-
     //Aufgabe 2;
+    //decrypts one char
     char decrypt(char ToDecrypt){
 
         int newValue = ToDecrypt;
@@ -70,13 +64,12 @@ private:
     size_t totalCharCount = 0;
 
     int round(double value)const{
-        int Ergebnis;
         if(double(value-int(value)) >= 0.5){
-           Ergebnis = value+1;
+           value = value+1;
         }else{
-           Ergebnis = value;
+           value = value;
         }
-        return Ergebnis;
+        return value;
     }
 
 public:
@@ -101,6 +94,7 @@ public:
 
     int* getArray()const{return Array;}
     size_t Size()const{return size;}
+
     void calculateRelativeFrequency(std::vector<char>& message){
 
         for(char character: message){
@@ -126,7 +120,6 @@ public:
 
 
     void printFrequency()const{
-        std::cout <<calcPercent(0)<< " " << Array[0] << std::endl;
         for(int i = 0; i < size; ++i){
             int starCount = round(calcPercent(i));
             std::cout << char(i+97) << ":   ";
@@ -140,36 +133,16 @@ public:
 
 
 void encrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut);
+
 void decrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut);
+
 //appending to outputfile
 void WriteToFile(std::vector<char>& input, std::fstream& file);
+
+double diff(double value1, double value2);
+
+int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq);
+
 void print(std::vector<char>& message);
-
-inline int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
-    int bestIndex = 0;
-    Frequency CurrentBestFreq;
-    CurrentBestFreq.calculateRelativeFrequency(message);
-
-    std::vector<char> localEncryption;
-    std::vector<char> localKeyVec;
-    for(int i = 97; i < 122; ++i ){
-        Frequency localFreq;
-        localKeyVec.push_back(i);
-        decrypt(localKeyVec, message, localEncryption);
-        localKeyVec.pop_back();
-        localFreq.calculateRelativeFrequency(localEncryption);
-        if(localFreq.calcPercent(i%97)-reffreq[i%97] > CurrentBestFreq.calcPercent(i%97)-reffreq[i%97]){
-            CurrentBestFreq = localFreq;
-            bestIndex =i;
-        }
-
-
-    }
-
-    return bestIndex;
-}
-
-template<typename T>
-inline void sort(std::vector<T>& vec);
 
 #endif //SEMESTER_2_COMMON_H
