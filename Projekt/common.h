@@ -1,12 +1,14 @@
 //
 // Created by Julius on 13.12.2022.
+// Matrikelnummer: 2210657
 //
 
 #ifndef SEMESTER_2_COMMON_H
 #define SEMESTER_2_COMMON_H
 #include <iostream>
 #include <vector>
-#include <fstream>
+#include <map>
+
 class Key{
 private:
     int value;
@@ -16,7 +18,7 @@ public:
             value = input%97;
         }else{
             value = 3;
-            std::cerr << "wrong key input. Standart key was used.";
+            std::cerr << "Key must only contain letters from the english alphabet -> standard key was assigned";
         }
     }
     //for potential use
@@ -39,6 +41,7 @@ public:
         }else if(ToEncrypt <= 122 && ToEncrypt >=97){ //kleine Buchstaben
             newValue = ((ToEncrypt+value)/123)*97+ (ToEncrypt+value)%123;
         }
+
         return newValue;
     }
     //Aufgabe 2;
@@ -64,12 +67,13 @@ private:
     size_t totalCharCount = 0;
 
     int round(double value)const{
+        int tempValue;
         if(double(value-int(value)) >= 0.5){
-           value = value+1;
+           tempValue = value+1;
         }else{
-           value = value;
+           tempValue = value;
         }
-        return value;
+        return tempValue;
     }
 
 public:
@@ -112,8 +116,7 @@ public:
 
     double calcPercent(size_t index)const{
         if(index > size ){
-            std::cerr << "index too high";
-            throw "b";
+            throw std::runtime_error("index out of bounds");
         }
         return double(Array[index])/double(totalCharCount)*100;
     }
@@ -141,7 +144,7 @@ void WriteToFile(std::vector<char>& input, std::fstream& file);
 
 double diff(double value1, double value2);
 
-int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq);
+int breakChiffre(std::vector<char>& message, std::map<char, double>& reffreq);
 
 void print(std::vector<char>& message);
 

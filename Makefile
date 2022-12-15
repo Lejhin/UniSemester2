@@ -1,4 +1,4 @@
-SRC_DIR = Projekt/Aufgabe1
+SRC_DIR = Projekt
 
 
 

@@ -1,9 +1,11 @@
 //
-// Created by juliu on 13.12.2022.
+// Created by Julius on 13.12.2022.
+// Matrikelnummer: 2210657
 //
 
 #include "common.h"
-
+#include <map>
+#include <fstream>
 
 
 void encrypt(std::vector<char>& keyVector, std::vector<char>& message, std::vector<char>& outPut) {
@@ -54,7 +56,7 @@ void print(std::vector<char>& message){
 //Frequency becomes best one. After all Loops, the index of the best one gets returned
 
 //BUG -- needs at least 56 characters to correctly break the ceaser encryption.
-int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
+int breakChiffre(std::vector<char>& message, std::map<char ,double>& reffreq){
     int index=0;
     Frequency CurrentBestFreq;
     int BestSumMax= 0;
@@ -71,7 +73,7 @@ int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
         //temporary Sum of all moments in which the current Frequency was closer to the Reference than the current best one
         int localSumMax = 0;
         for(int j = 97; j < 122; ++j){
-            if(diff(localFreq.calcPercent(j%97), reffreq[j%97]) <diff(CurrentBestFreq.calcPercent(j%97),reffreq[j%97])){
+            if(diff(localFreq.calcPercent(j%97), reffreq[j]) <diff(CurrentBestFreq.calcPercent(j%97),reffreq[j])){
                 localSumMax++;
             }
         }
@@ -80,7 +82,7 @@ int breakCeaser(std::vector<char>& message, std::vector<double>& reffreq){
             BestSumMax = localSumMax;
         }else{
             //only works on large texts. If the text is too small, the differences are too small
-            //to differenciate between 26 different encryptions
+            //to differentiate between 26 different encryptions
             if(localSumMax > BestSumMax){
                 BestSumMax = localSumMax;
                 index = i;
