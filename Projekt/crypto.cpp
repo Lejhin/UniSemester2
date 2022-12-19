@@ -9,21 +9,19 @@
 #include "common.h"
 
 
+
 int main(int argc, char** argv){
 
-    if(argc < 2){
-        std::runtime_error("not enough arguments");
-    }
-    //information extraction and encryption/decryption
 
     //feel free to change the directory to your specific location
     std::string EnFreqLocation = "Projekt/en_freq.txt";
+    //information extraction and encryption/decryption
+    argsp_t programmArguments(argc, argv);
     char ReadBuffer;
     std::vector<char> message;
     std::vector<char> encryptedMessage;
     std::map<char, double> EnFreqMap;
 
-    argsp_t programmArguments(argc, argv);
     std::string Input;
     Frequency F1;
 
@@ -45,7 +43,12 @@ int main(int argc, char** argv){
     }
 
     std::vector<char> KeyVector(Input.begin(), Input.end());
+
     Readfile.open(programmArguments.pos(0));
+    if(!Readfile.is_open()){
+        //  \x1B[1m and \x1B[0m to print in bold text
+        std::cerr << ("\x1B[1mFilename does not exist\x1b[0m");
+    }
 
 
     //Extracting file information
@@ -61,7 +64,16 @@ int main(int argc, char** argv){
     //Task 5
     if(programmArguments.flag("c")){
         if(programmArguments.has_option("cfreq")){
+
             RefFile.open(programmArguments.option("cfreq"));
+            if(!RefFile.is_open()){
+
+                //  \x1B[1m and \x1B[0m to print in bold text as warning
+                std::cout << std::endl;
+                 std::cerr <<  ("\x1B[1mFrequency Analysis not found. Standard path is used.\x1B[0m") << std::endl;
+                 std::cout << std::endl;
+                RefFile.open(EnFreqLocation);
+            }
         }else{
             RefFile.open(EnFreqLocation);
         }
