@@ -86,13 +86,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Respository/Test2/Uni.cpp">
-			<Option target="Semester_2"/>
-		</Unit>
-		<Unit filename="D:/Respository/Test2/Uni.h">
-			<Option target="Semester_2"/>
-		</Unit>
-		<Unit filename="D:/Respository/Test2/main.cpp">
+		<Unit filename="D:/Respository/Test4/Test4.cpp">
 			<Option target="Semester_2"/>
 		</Unit>
 		<Unit filename="D:/Respository/CMakeLists.txt">

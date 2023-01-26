@@ -128,53 +128,29 @@ Semester_2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/build
 .PHONY : Semester_2/fast
 
-Test2/Uni.obj: Test2/Uni.cpp.obj
-.PHONY : Test2/Uni.obj
+Test4/Test4.obj: Test4/Test4.cpp.obj
+.PHONY : Test4/Test4.obj
 
 # target to build an object file
-Test2/Uni.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test2/Uni.cpp.obj
-.PHONY : Test2/Uni.cpp.obj
+Test4/Test4.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test4/Test4.cpp.obj
+.PHONY : Test4/Test4.cpp.obj
 
-Test2/Uni.i: Test2/Uni.cpp.i
-.PHONY : Test2/Uni.i
-
-# target to preprocess a source file
-Test2/Uni.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test2/Uni.cpp.i
-.PHONY : Test2/Uni.cpp.i
-
-Test2/Uni.s: Test2/Uni.cpp.s
-.PHONY : Test2/Uni.s
-
-# target to generate assembly for a file
-Test2/Uni.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test2/Uni.cpp.s
-.PHONY : Test2/Uni.cpp.s
-
-Test2/main.obj: Test2/main.cpp.obj
-.PHONY : Test2/main.obj
-
-# target to build an object file
-Test2/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test2/main.cpp.obj
-.PHONY : Test2/main.cpp.obj
-
-Test2/main.i: Test2/main.cpp.i
-.PHONY : Test2/main.i
+Test4/Test4.i: Test4/Test4.cpp.i
+.PHONY : Test4/Test4.i
 
 # target to preprocess a source file
-Test2/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test2/main.cpp.i
-.PHONY : Test2/main.cpp.i
+Test4/Test4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test4/Test4.cpp.i
+.PHONY : Test4/Test4.cpp.i
 
-Test2/main.s: Test2/main.cpp.s
-.PHONY : Test2/main.s
+Test4/Test4.s: Test4/Test4.cpp.s
+.PHONY : Test4/Test4.s
 
 # target to generate assembly for a file
-Test2/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test2/main.cpp.s
-.PHONY : Test2/main.cpp.s
+Test4/Test4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Test4/Test4.cpp.s
+.PHONY : Test4/Test4.cpp.s
 
 # Help Target
 help:
@@ -185,12 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Semester_2
-	@echo ... Test2/Uni.obj
-	@echo ... Test2/Uni.i
-	@echo ... Test2/Uni.s
-	@echo ... Test2/main.obj
-	@echo ... Test2/main.i
-	@echo ... Test2/main.s
+	@echo ... Test4/Test4.obj
+	@echo ... Test4/Test4.i
+	@echo ... Test4/Test4.s
 .PHONY : help
 
 
