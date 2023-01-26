@@ -86,10 +86,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Respository/complex/complex.h">
+		<Unit filename="D:/Respository/Projekt/common.cpp">
 			<Option target="Semester_2"/>
 		</Unit>
-		<Unit filename="D:/Respository/complex/main.cpp">
+		<Unit filename="D:/Respository/Projekt/common.h">
+			<Option target="Semester_2"/>
+		</Unit>
+		<Unit filename="D:/Respository/Projekt/crypto.cpp">
+			<Option target="Semester_2"/>
+		</Unit>
+		<Unit filename="D:/Respository/Projekt/ooptool.cpp">
+			<Option target="Semester_2"/>
+		</Unit>
+		<Unit filename="D:/Respository/Projekt/ooptool.h">
 			<Option target="Semester_2"/>
 		</Unit>
 		<Unit filename="D:/Respository/CMakeLists.txt">

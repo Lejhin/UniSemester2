@@ -10,7 +10,7 @@
 
 class Uni {
 
-
+    std::string name;
 public:
 
     Uni(std::string Name);

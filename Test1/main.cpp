@@ -3,14 +3,17 @@
 //
 #include <iostream>
 #include <vector>
+#include "at.h"
 
-size_t finde(std::vector<int> vec, int a){
-    size_t idx = 0;
-    while(idx < vec.size()){
-        if(vec[idx] == a){
-            return idx;
-        }
-        idx++;
+
+int& at(int* vec, int len, int i){
+
+    if( i >= len){
+        std::cerr <<  "index overflow" << std::endl;
+        throw 0;
+
+    }else{
+
+        return vec[i];
     }
-    return vec.size();
 }

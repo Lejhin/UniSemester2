@@ -41,7 +41,6 @@ public:
         }else if(ToEncrypt <= 122 && ToEncrypt >=97){ //kleine Buchstaben
             newValue = ((ToEncrypt+value)/123)*97+ (ToEncrypt+value)%123;
         }
-
         return newValue;
     }
     //Aufgabe 2;

@@ -14,6 +14,8 @@ int main(){
     Resistor r1(100), r2(200), r3(300);
     Poti p1(0);
 
+
+
     for(int i = 0; i < 21; ++i){
         p1.set_ohm(i*30);
         Parallel Netz2(&p1, &r2);
@@ -33,5 +35,5 @@ int main(){
 
 
 
-
 }
+const void foo();

@@ -8,6 +8,8 @@
 
 int main(){
 
+    Uni university("hallo");
+
 
     
 }

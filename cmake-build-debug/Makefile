@@ -128,29 +128,77 @@ Semester_2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/build
 .PHONY : Semester_2/fast
 
-complex/main.obj: complex/main.cpp.obj
-.PHONY : complex/main.obj
+Projekt/common.obj: Projekt/common.cpp.obj
+.PHONY : Projekt/common.obj
 
 # target to build an object file
-complex/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/complex/main.cpp.obj
-.PHONY : complex/main.cpp.obj
+Projekt/common.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/common.cpp.obj
+.PHONY : Projekt/common.cpp.obj
 
-complex/main.i: complex/main.cpp.i
-.PHONY : complex/main.i
+Projekt/common.i: Projekt/common.cpp.i
+.PHONY : Projekt/common.i
 
 # target to preprocess a source file
-complex/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/complex/main.cpp.i
-.PHONY : complex/main.cpp.i
+Projekt/common.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/common.cpp.i
+.PHONY : Projekt/common.cpp.i
 
-complex/main.s: complex/main.cpp.s
-.PHONY : complex/main.s
+Projekt/common.s: Projekt/common.cpp.s
+.PHONY : Projekt/common.s
 
 # target to generate assembly for a file
-complex/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/complex/main.cpp.s
-.PHONY : complex/main.cpp.s
+Projekt/common.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/common.cpp.s
+.PHONY : Projekt/common.cpp.s
+
+Projekt/crypto.obj: Projekt/crypto.cpp.obj
+.PHONY : Projekt/crypto.obj
+
+# target to build an object file
+Projekt/crypto.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/crypto.cpp.obj
+.PHONY : Projekt/crypto.cpp.obj
+
+Projekt/crypto.i: Projekt/crypto.cpp.i
+.PHONY : Projekt/crypto.i
+
+# target to preprocess a source file
+Projekt/crypto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/crypto.cpp.i
+.PHONY : Projekt/crypto.cpp.i
+
+Projekt/crypto.s: Projekt/crypto.cpp.s
+.PHONY : Projekt/crypto.s
+
+# target to generate assembly for a file
+Projekt/crypto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/crypto.cpp.s
+.PHONY : Projekt/crypto.cpp.s
+
+Projekt/ooptool.obj: Projekt/ooptool.cpp.obj
+.PHONY : Projekt/ooptool.obj
+
+# target to build an object file
+Projekt/ooptool.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/ooptool.cpp.obj
+.PHONY : Projekt/ooptool.cpp.obj
+
+Projekt/ooptool.i: Projekt/ooptool.cpp.i
+.PHONY : Projekt/ooptool.i
+
+# target to preprocess a source file
+Projekt/ooptool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/ooptool.cpp.i
+.PHONY : Projekt/ooptool.cpp.i
+
+Projekt/ooptool.s: Projekt/ooptool.cpp.s
+.PHONY : Projekt/ooptool.s
+
+# target to generate assembly for a file
+Projekt/ooptool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Semester_2.dir\build.make CMakeFiles/Semester_2.dir/Projekt/ooptool.cpp.s
+.PHONY : Projekt/ooptool.cpp.s
 
 # Help Target
 help:
@@ -161,9 +209,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Semester_2
-	@echo ... complex/main.obj
-	@echo ... complex/main.i
-	@echo ... complex/main.s
+	@echo ... Projekt/common.obj
+	@echo ... Projekt/common.i
+	@echo ... Projekt/common.s
+	@echo ... Projekt/crypto.obj
+	@echo ... Projekt/crypto.i
+	@echo ... Projekt/crypto.s
+	@echo ... Projekt/ooptool.obj
+	@echo ... Projekt/ooptool.i
+	@echo ... Projekt/ooptool.s
 .PHONY : help
 
 

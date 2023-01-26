@@ -245,6 +245,15 @@ CMAKE_STRIP:FILEPATH=D:/Programme/CLion 2022.2.4/bin/mingw/bin/strip.exe
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+Semester_2/Testate/Testat2_BINARY_DIR:STATIC=D:/Respository/cmake-build-debug
+
+//Value Computed by CMake
+Semester_2/Testate/Testat2_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Semester_2/Testate/Testat2_SOURCE_DIR:STATIC=D:/Respository
+
+//Value Computed by CMake
 Semester_2_BINARY_DIR:STATIC=D:/Respository/cmake-build-debug
 
 //Value Computed by CMake
@@ -420,4 +429,6 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//STRINGS
+SOURCES:INTERNAL=D:/Respository/Test2/main.cpp
 

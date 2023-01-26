@@ -8,111 +8,117 @@
 #include <stddef.h>
 
 template<typename T>
-class Linked_list{
+class Linked_list {
 private:
-    struct Node{
+    struct Node {
         T element;
-        Node* nextElement;
+        Node *nextElement;
     };
-    Node* _head;
+    Node *_head;
 public:
-    class iterator{
-        Node* curr;
+    class iterator {
+        Node *curr;
     public:
-        iterator(Node* c): curr(c){
+        iterator(Node *c) : curr(c) {
         }
-        bool operator !=(iterator other){
+
+        bool operator!=(iterator other) {
             return curr != other.curr;
         }
-        iterator& operator++(){
+
+        iterator &operator++() {
             curr = curr->nextElement;
             return *this;
         }
-        T& operator*(){
+
+        T &operator*() {
             return curr->element;
         }
     };
 
-    Linked_list(){ //leere Liste
+    Linked_list() { //leere Liste
         _head = nullptr;
     }
 
-    ~Linked_list(){
-        while(_head != nullptr){
-            Node* next = _head->nextElement;
+    ~Linked_list() {
+        while (_head != nullptr) {
+            Node *next = _head->nextElement;
             delete _head;
             _head = next;
         }
     }
-    void push_back(T element){
-        Node* curr = _head;
-        while(curr->nextElement != nullptr){
-          curr = curr->nextElement;
+
+    void push_back(T element) {
+        Node *curr = _head;
+        while (curr->nextElement != nullptr) {
+            curr = curr->nextElement;
         }
-        Node* newNode = new Node;
+        Node *newNode = new Node;
         newNode->element = element;
-        newNode ->nextElement = curr->nextElement;
+        newNode->nextElement = curr->nextElement;
         curr->nextElement = newNode;
     }
-    void insert(size_t idx, const T element){
-        if(idx == 0){
-            Node* newNode = new Node;
+
+    void insert(size_t idx, const T element) {
+        if (idx == 0) {
+            Node *newNode = new Node;
             newNode->element = element;
             newNode->nextElement = _head;
             _head = newNode;
-        }else{
-            Node* _curr = _head;
-            for(int i = 0; i < idx; ++i){
+        } else {
+            Node *_curr = _head;
+            for (int i = 0; i < idx - 1; ++i) {
                 _curr = _curr->nextElement;
             }
-            Node* newNode = new Node;
+            Node *newNode = new Node;
             newNode->element = element;
-            newNode-> nextElement = _curr->nextElement;
+            newNode->nextElement = _curr->nextElement;
             _curr->nextElement = newNode;
         }
     }
-    T& operator[](size_t idx){
 
-            Node* _current = _head;
-            for(size_t i = 0; i < idx; ++i){
-                _current = _current->nextElement;
-                if(_current == nullptr){
-                    throw std::runtime_error("out of bounds");
-                }
+    T &operator[](size_t idx) {
+        Node *_current = _head;
+        for (size_t i = 0; i < idx; ++i) {
+            _current = _current->nextElement;
+            if (_current == nullptr) {
+                throw std::runtime_error("out of bounds");
             }
-            return _current->element;
-
-
+        }
+        return _current->element;
     }
 
-    void out(){
-        Node* current = _head;
-        while(current != nullptr){
+    void out() {
+        Node *current = _head;
+        while (current != nullptr) {
             std::cout << current->element << std::endl;
             current = current->nextElement;
         }
     }
-    void remove(size_t idx){
-        if(idx >= size()){
+
+    void remove(size_t idx) {
+        if (idx >= size()) {
             throw std::runtime_error("out of bounds");
         }
-        if(idx == 0){
-            Node* todel = _head;
+        if (idx == 0) {
+            Node *todel = _head;
             _head = _head->nextElement;
             delete todel;
             return;
         }
         size_t i = 0;
-        Node* curr = _head;
-        while(i < idx-1){
+        Node *curr = _head;
+        while (i < idx - 1) {
             i++;
             curr = curr->nextElement;
         }
-        Node* todel = curr->nextElement;
+        Node *todel = curr->nextElement;
         curr = curr->nextElement;
         delete todel;
         return;
     }
+
+
     size_t size() const{
         size_t ret = 0;
         Node* _curr = _head;

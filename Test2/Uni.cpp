@@ -5,8 +5,8 @@
 #include "Uni.h"
 
 
-Uni::Uni(std::string Name) {
+Uni::Uni(std::string Name):name(Name) {
 
-    std::cout << Name << std::endl;
+    std::cout << name << std::endl;
 
 }
