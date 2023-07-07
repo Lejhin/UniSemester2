@@ -42,6 +42,20 @@ public:
 
     }
 
+    void IncOdd1(){
+        IncOdd1(root);
+    }
+    void IncOdd1(Node* n){
+        if(n == nullptr){
+            return;
+        }
+        IncOdd1(n->links);
+        IncOdd1(n->rechts);
+        if(n->val% 2 == 1){
+            n->val +=1;
+        }
+    }
+
     void insert(size_t value){
         if(root == nullptr){
             add_leave(root, value);
@@ -96,6 +110,7 @@ int main(){
     for(int i = 0; i < 10; ++i){
         Tree.insert(rand() %  100);
     }
+    Tree.IncOdd1();
     Tree.print(Tree.begin());
 
 

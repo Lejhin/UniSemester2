@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
 project(Semester_2)
 
-file(GLOB file_SRC Test4/Test4.cpp)
+file(GLOB file_SRC Test4/Test3.cpp)
 
 
 set(CMAKE_CXX_STANDARD 14)
